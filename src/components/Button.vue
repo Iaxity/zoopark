@@ -1,5 +1,26 @@
 <template>
-  <button :style="{ background: color }" class="btn">{{ text }}</button>
+  <button
+    style="
+      width: 90px;
+      height: 30px;
+      left: 836px;
+      top: 9px;
+
+      background: #fca311;
+      border-radius: 10px;
+
+      cursor: pointer;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+
+      color: rgba(0, 0, 0, 0.9);
+    "
+  >
+    Logout
+  </button>
 </template>
 
 <script>
@@ -8,6 +29,11 @@ export default {
   props: {
     text: String,
     color: String,
+  },
+  methods: {
+    onClick() {
+      console.log("click");
+    },
   },
 };
 </script>
@@ -25,7 +51,7 @@ button {
   font-size: 24px;
   line-height: 28px;
   color: white;
-  background: #363363;
+  background: #332f5f;
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;

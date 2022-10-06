@@ -1,17 +1,25 @@
 <template>
-  <div class="header">
-    <header>
-      <nav>
-        <h1>{{ name }}</h1>
-        <Button :text="Logout" :color="yellow" />
-      </nav>
-    </header>
-  </div>
+  <header>
+    <nav>
+      <h1 style="margin-right: 30px">{{ name }}</h1>
+      <Button></Button>
+      <p
+        style="
+          position: absolute;
+          width: 59px;
+          height: 21px;
+          left: 268px;
+          top: 169px;
+        "
+      >
+        Filter_1
+      </p>
+    </nav>
+  </header>
 </template>
 
 <script>
 import Button from "../components/Button.vue";
-
 export default {
   name: "Header",
   components: {
@@ -26,12 +34,13 @@ export default {
 </script>
 
 <style lang="scss">
-.header {
+header {
   width: 100%;
   margin: 0 auto;
+  left: 0px;
+  top: 1px;
+
   position: fixed;
-}
-header {
   background: #141232;
   & nav {
     font-family: "Roboto";

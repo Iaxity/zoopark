@@ -1,11 +1,23 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import Page from "../views/Page.vue";
+import AnimalsCardView from "../views/AnimalsCardView.vue";
+import AnimalsView from "../views/AnimalsView.vue";
+import UserListView from "../views/UserListView.vue";
 
 const routes = [
   {
     path: "/",
-    name: "Page",
-    component: Page,
+    name: "AnimalsCardView",
+    component: AnimalsCardView,
+  },
+  {
+    path: "/Animals",
+    name: "AnimalsView",
+    component: AnimalsView,
+  },
+  {
+    path: "/UserList",
+    name: "UserListView",
+    component: UserListView,
   },
 ];
 
