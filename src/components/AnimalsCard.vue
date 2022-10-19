@@ -44,9 +44,20 @@
     >
       Removed
     </button>
+    <h2
+      style="
+        position: fixed;
+        width: 59px;
+        height: 21px;
+        left: 268px;
+        top: 169px;
+      "
+    >
+      Filter_1
+    </h2>
   </div>
   <div>
-    <table border="1">
+    <table>
       <tr>
         <th>Id</th>
         <th>aviary number</th>
@@ -148,4 +159,29 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+table {
+  position: fixed;
+  left: 267px;
+  top: 206px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+
+  color: #ffffff;
+
+  width: 100%; /* Ширина таблицы */
+  background: white; /* Цвет фона таблицы */
+  color: white; /* Цвет текста */
+  border-spacing: 3px; /* Расстояние между ячейками */
+}
+td,
+th {
+  background: #4c5c81;
+  padding: 20px; /* Поля вокруг текста */
+}
+</style>

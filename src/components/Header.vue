@@ -1,19 +1,8 @@
 <template>
   <header>
     <nav>
-      <h1 style="margin-right: 30px">{{ name }}</h1>
-      <Button></Button>
-      <p
-        style="
-          position: absolute;
-          width: 59px;
-          height: 21px;
-          left: 268px;
-          top: 169px;
-        "
-      >
-        Filter_1
-      </p>
+      <h1 style="margin-right: 30px; cursor: pointer">{{ name }}</h1>
+      <Button />
     </nav>
   </header>
 </template>
