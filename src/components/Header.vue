@@ -1,7 +1,7 @@
 <template>
   <header>
-    <nav>
-      <h1 style="margin-right: 30px; cursor: pointer">{{ name }}</h1>
+    <nav class="header">
+      <h1>{{ name }}</h1>
       <Button />
     </nav>
   </header>
@@ -23,24 +23,28 @@ export default {
 </script>
 
 <style lang="scss">
+header h1 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+
+  margin-right: 20px;
+
+  color: #ffffff;
+  cursor: pointer;
+}
+.header {
+  display: flex;
+  justify-content: flex-end;
+  height: 47px;
+  align-items: center;
+}
 header {
-  width: 100%;
-  margin: 0 auto;
-  left: 0px;
-  top: 1px;
-
-  position: fixed;
   background: #141232;
-  & nav {
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 17px;
-    line-height: 28px;
-    justify-content: flex-end;
-
-    padding: 10px 30px 10px 0px;
-    color: #ffffff;
-  }
+  width: 100%;
+  top: 0;
+  position: fixed;
 }
 </style>

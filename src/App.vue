@@ -1,55 +1,63 @@
 <template>
   <div id="app">
-    <AnimalsCardView />
+    <Header />
+    <Navigation />
+    <MainLayout />
   </div>
 </template>
 
 <script>
-import AnimalsCardView from "./views/AnimalsCardView.vue";
+import Header from "./components/Header.vue";
+import Navigation from "./components/Navigation.vue";
+import MainLayout from "./layout/MainLayout.vue";
 
 export default {
   name: "App",
   components: {
-    AnimalsCardView,
+    Header,
+    Navigation,
+    MainLayout,
   },
 };
 </script>
 
 <style lang="scss">
+#app {
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto;
+}
 body {
   margin: 0;
-  position: fixed;
 
   background: #14213d;
 }
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
+  text-decoration: none;
 }
-#app {
-  position: absolute;
-  width: 956px;
-  height: 641px;
-}
-div {
-  width: 141px;
-  height: 28px;
-  left: 140px;
-  top: 60px;
-
-  display: flex;
-  justify-content: flex-start;
+table {
+  width: 98%;
+  height: 85%;
 
   font-family: "Roboto";
-  font-style: normal;
   font-weight: 400;
-  font-size: 12px;
-  line-height: 28px;
-
+  line-height: 10px;
+  text-align: center;
   color: #ffffff;
+  background: white;
+  border-spacing: 3px;
 }
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+td,
+th {
+  background: #4c5c81;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: 400;
 }
 </style>

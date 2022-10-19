@@ -1,19 +1,16 @@
 <template>
   <div>
-    <Header />
-    <Navigation />
+    <Animals />
   </div>
 </template>
 
 <script>
-import Header from "../components/Header.vue";
-import Navigation from "../components/Navigation.vue";
+import Animals from "../components/Animals.vue";
 
 export default {
-  name: "Animals",
+  name: "AnimalsView",
   components: {
-    Header,
-    Navigation,
+    Animals,
   },
 };
 </script>

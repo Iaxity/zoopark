@@ -1,11 +1,16 @@
 <template>
-  <div></div>
+  <div>
+    <UserList />
+  </div>
 </template>
 
 <script>
+import UserList from "../components/UserList.vue";
+
 export default {
-  name: "UserList",
+  name: "UserListView",
+  components: {
+    UserList,
+  },
 };
 </script>
-
-<style></style>
