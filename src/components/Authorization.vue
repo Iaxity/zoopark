@@ -8,7 +8,7 @@
           <input placeholder="Login" class="auth" type="text" />
           <input placeholder="Password" class="auth" type="password" />
           <div class="reg-log">
-            <a href="#">Registration</a>
+            <Registration />
             <button class="login">Login</button>
           </div>
         </div>
@@ -18,7 +18,11 @@
 </template>
 
 <script>
+import Registration from "./Registration.vue";
 export default {
+  components: {
+    Registration,
+  },
   props: {
     text: String,
     color: String,

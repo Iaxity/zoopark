@@ -3,17 +3,28 @@
   <div v-if="modalOpened" class="personal-modal">
     <div class="personal-modal-background">
       <div class="personal-modal-content">
-        <div class="log-pass">
-          <div class="name-id">
-            <h1>{{ name }}</h1>
-          </div>
-          <input placeholder="Name" class="personal" type="text" />
-          <input placeholder="Password" class="personal" type="password" />
-          <input placeholder="E-mail" class="personal" type="text" />
-          <input placeholder="Phone" class="personal" type="text" />
-          <div class="reg-log">
-            <button class="cancel">Cancel</button>
-            <button class="delete">Delete profile</button>
+        <div class="person-name-id">
+          <h1 style="padding-right: 20px">{{ name }}</h1>
+          <h3>id {{ id }}</h3>
+        </div>
+        <div class="person-block">
+          <div class="person-string-input">
+            <div class="person-string">
+              <h2>Name</h2>
+              <h2>Password</h2>
+              <h2>E-mail</h2>
+              <h2>Phone</h2>
+            </div>
+            <div class="person-input">
+              <input placeholder="Name" class="personal" type="text" />
+              <input placeholder="Password" class="personal" type="password" />
+              <input placeholder="E-mail" class="personal" type="text" />
+              <input placeholder="Phone" class="personal" type="text" />
+              <div class="can-del">
+                <button class="cancel">Cancel</button>
+                <button class="delete">Delete profile</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -29,6 +40,7 @@ export default {
   data() {
     return {
       name: "Vitaly",
+      id: "34834942",
       modalOpened: false,
     };
   },
@@ -45,25 +57,47 @@ a {
   color: white;
   text-decoration: underline;
 }
-.name-id {
+.person-name-id {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  align-content: center;
+  flex-wrap: wrap;
+
   width: 562px;
   height: 72px;
+  margin-bottom: 30px;
 
   border-radius: 10px 10px 0px 0px;
   background-color: #141232;
 }
-.name {
-  background: none;
-  border: 0px solid;
-}
-.reg-log {
+.can-del {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.log-pass {
+.person-block {
+  padding-left: 45px;
+
   display: flex;
   flex-direction: column;
+}
+.person-string-input {
+  display: flex;
+}
+.person-input {
+  padding-left: 30px;
+
+  display: flex;
+  flex-direction: column;
+}
+.person-string {
+  display: flex;
+  flex-direction: column;
+}
+.name {
+  background: none;
+  border: 0px solid;
 }
 .delete {
   width: 160px;
@@ -97,9 +131,9 @@ a {
 }
 .personal {
   width: 265px;
-  height: 40px;
+  height: 38px;
 
-  padding-left: 20px;
+  padding-left: 15px;
   margin-bottom: 20px;
 
   background: rgba(229, 229, 229, 0.6);
@@ -139,10 +173,29 @@ a {
     font-size: 36px;
     line-height: 42px;
 
-    color: #fca311;
+    color: #ffffff;
 
     padding-bottom: 30px;
-    padding-left: 75px;
+    padding-left: 45px;
+    padding-top: 30px;
+  }
+  h2 {
+    padding-bottom: 40px;
+
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+
+    color: #ffffff;
+  }
+  h3 {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #ffffff;
   }
 }
 .personal-modal-content {
@@ -154,8 +207,6 @@ a {
   box-shadow: 0px 4px 25px 5px rgba(20, 33, 61, 0.15);
 
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
 }
 </style>
