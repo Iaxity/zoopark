@@ -8,7 +8,6 @@
 import Animals from "../components/Animals.vue";
 
 export default {
-  name: "AnimalsView",
   components: {
     Animals,
   },

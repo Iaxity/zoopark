@@ -1,21 +1,18 @@
 <template>
   <div id="app">
     <Header />
-    <Navigation />
     <MainLayout />
   </div>
 </template>
 
 <script>
 import Header from "./components/Header.vue";
-import Navigation from "./components/Navigation.vue";
 import MainLayout from "./layout/MainLayout.vue";
 
 export default {
   name: "App",
   components: {
     Header,
-    Navigation,
     MainLayout,
   },
 };
@@ -29,7 +26,6 @@ export default {
 }
 body {
   margin: 0;
-
   background: #14213d;
 }
 h1,
@@ -38,6 +34,8 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: "Roboto";
+  font-style: normal;
   margin: 0;
   text-decoration: none;
 }

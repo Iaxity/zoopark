@@ -120,8 +120,6 @@ export default {};
   width: 110px;
   height: 45px;
 
-  font-family: "Roboto";
-  font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
@@ -160,8 +158,6 @@ export default {};
   h2 {
     margin-right: 5px;
 
-    font-family: "Roboto";
-    font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
@@ -175,8 +171,6 @@ export default {};
   margin-right: 10px;
 }
 .userlist {
-  font-family: "Roboto";
-  font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 28px;
@@ -184,8 +178,6 @@ export default {};
   padding-bottom: 20px;
   align-items: center;
   h1 {
-    font-family: "Roboto";
-    font-style: normal;
     font-weight: 400;
     font-size: 24px;
     line-height: 28px;

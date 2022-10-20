@@ -55,8 +55,6 @@ export default {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 
-  font-family: "Roboto";
-  font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 28px;
@@ -86,11 +84,10 @@ export default {
   flex-direction: column;
 }
 .logo {
-  font-family: "Roboto";
-  font-style: normal;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 24px;
   line-height: 42px;
+
   color: #fca311;
 
   display: flex;

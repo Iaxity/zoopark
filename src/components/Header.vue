@@ -1,32 +1,30 @@
 <template>
   <header>
     <nav class="header">
-      <h1>{{ name }}</h1>
-      <Button />
+      <PersonalArea />
+      <Navigation />
+      <Authorization />
     </nav>
   </header>
 </template>
 
 <script>
-import Button from "../components/Button.vue";
+import PersonalArea from "./PersonalArea.vue";
+import Authorization from "./Authorization.vue";
+import Navigation from "./Navigation.vue";
+
 export default {
-  name: "Header",
   components: {
-    Button,
-  },
-  data: () => {
-    return {
-      name: "Vitaly",
-    };
+    PersonalArea,
+    Navigation,
+    Authorization,
   },
 };
 </script>
 
 <style lang="scss">
-header h1 {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
+.name {
+  font-weight: 600;
   font-size: 24px;
   line-height: 28px;
 
@@ -40,8 +38,6 @@ header h1 {
   justify-content: flex-end;
   height: 47px;
   align-items: center;
-}
-header {
   background: #141232;
   width: 100%;
   top: 0;

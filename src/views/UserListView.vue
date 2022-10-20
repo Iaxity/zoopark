@@ -8,7 +8,6 @@
 import UserList from "../components/UserList.vue";
 
 export default {
-  name: "UserListView",
   components: {
     UserList,
   },
