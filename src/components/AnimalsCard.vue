@@ -30,7 +30,7 @@
                   </div>
                   <div class="upload">
                     <h2>Upload a photo</h2>
-                    <div class="over--appl">
+                    <div class="over">
                       <div class="over--photo">
                         <button class="overview">Overview</button>
                         <div class="show_photo"></div>
@@ -262,9 +262,15 @@ export default {
 .over--appl {
   padding-left: 45px;
 }
+.over {
+  padding-left: 47px;
+}
 .overview {
   width: 106px;
   height: 30px;
+
+  margin-bottom: 20px;
+  margin-right: 20px;
 
   border: 1px solid #fca311;
   border-radius: 10px;
@@ -322,8 +328,8 @@ export default {
   border-radius: 10px;
 
   font-weight: 400;
-  font-size: 18px;
-  line-height: 21px;
+  font-size: 14px;
+  line-height: 16px;
 
   color: rgba(0, 0, 0, 0.9);
 }
@@ -331,14 +337,19 @@ export default {
   width: 105px;
   height: 30px;
 
+  margin-right: 20px;
+
   background: #fca311;
   border-radius: 10px;
 
   font-weight: 400;
-  font-size: 18px;
-  line-height: 21px;
+  font-size: 14px;
+  line-height: 16px;
 
   color: rgba(0, 0, 0, 0.9);
+}
+.can--appl {
+  display: flex;
 }
 .add-animal-card {
   width: 262px;
@@ -424,7 +435,7 @@ export default {
   }
 }
 .add-animal-card-modal-content {
-  width: 553px;
+  width: 583px;
   height: 637px;
 
   background-color: #14213d;
