@@ -25,6 +25,10 @@ body {
   margin: 0;
   background: #14213d;
 }
+a {
+  color: white;
+  text-decoration: underline;
+}
 h1,
 h2,
 h3,
@@ -49,6 +53,7 @@ table {
 }
 button {
   cursor: pointer;
+  color: rgba(0, 0, 0, 0.9);
 }
 td,
 th {

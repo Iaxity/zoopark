@@ -1,113 +1,110 @@
 <template>
-  <header>
-    <nav class="header">
-      <button @click="openModalName()" class="name">{{ name }}</button>
-      <div v-if="modalOpenedName" class="personal-modal">
-        <div class="personal-modal-background">
-          <div class="personal-modal-content">
-            <div class="person-name-id">
-              <h1 style="padding-right: 20px">{{ name }}</h1>
-              <h3>id {{ id }}</h3>
-            </div>
-            <div class="person-block">
-              <div class="person-string-input">
-                <div class="person-string">
-                  <h2>Name</h2>
-                  <h2>Password</h2>
-                  <h2>E-mail</h2>
-                  <h2>Phone</h2>
-                </div>
-                <div class="person-input">
-                  <input placeholder="Name" class="personal" type="text" />
-                  <input
-                    placeholder="Password"
-                    class="personal"
-                    type="password"
-                  />
-                  <input placeholder="E-mail" class="personal" type="text" />
-                  <input placeholder="Phone" class="personal" type="text" />
-                  <div class="can-del">
-                    <button class="cancel">Cancel</button>
-                    <button class="delete">Delete profile</button>
-                  </div>
+  <div class="header">
+    <button @click="openModalPersonal()" class="name">{{ name }}</button>
+    <div v-if="modalOpenedPersonal" class="personal-modal">
+      <div class="personal-modal-background">
+        <div class="personal-modal-content">
+          <div class="person-name-id">
+            <h1 style="padding-right: 20px">{{ name }}</h1>
+            <h3>id {{ id }}</h3>
+          </div>
+          <div class="person-block">
+            <div class="person-string-input">
+              <div class="person-string">
+                <h2>Name</h2>
+                <h2>Password</h2>
+                <h2>E-mail</h2>
+                <h2>Phone</h2>
+              </div>
+              <div class="person-input">
+                <input placeholder="Name" class="personal" type="text" />
+                <input
+                  placeholder="Password"
+                  class="personal"
+                  type="password"
+                />
+                <input placeholder="E-mail" class="personal" type="text" />
+                <input placeholder="Phone" class="personal" type="text" />
+                <div class="can-del">
+                  <button @click="exitModalPersonal()" class="cancel">
+                    Cancel
+                  </button>
+                  <button class="delete">Delete profile</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <button @click="openModalAuth()" class="logout">Logout</button>
-      <div v-if="modalOpenedAuth" class="auth-modal">
-        <div class="auth-modal-background">
-          <div class="auth-modal-content">
-            <div class="log-pass">
-              <h1>Authorization</h1>
-              <input placeholder="Login" class="auth" type="text" />
-              <input placeholder="Password" class="auth" type="password" />
-              <div class="reg-log">
-                <button class="registration-btn" @click="modalOpened()">
-                  Registration
-                </button>
-                <div v-if="modalOpened" class="registration-modal">
-                  <div class="registration-modal-background">
-                    <div class="registration-modal-content">
-                      <div class="reg-name-id">
-                        <h1 style="padding-right: 20px">{{ name }}</h1>
-                        <h3>id {{ id }}</h3>
-                      </div>
-                      <div class="reg-block">
-                        <div class="reg-string-input">
-                          <div class="reg-string">
-                            <h2>Name</h2>
-                            <h2>Password</h2>
-                            <h2>E-mail</h2>
-                            <h2>Phone</h2>
-                          </div>
-                          <div class="reg-input">
-                            <input
-                              placeholder="Name"
-                              class="registration"
-                              type="text"
-                            />
-                            <input
-                              placeholder="Password"
-                              class="registration"
-                              type="password"
-                            />
-                            <input
-                              placeholder="E-mail"
-                              class="registration"
-                              type="text"
-                            />
-                            <input
-                              placeholder="Phone"
-                              class="registration"
-                              type="text"
-                            />
-                            <div class="can-del">
-                              <button class="cancel">Cancel</button>
-                              <button class="ok">OK</button>
-                            </div>
+    </div>
+    <button @click="openModalAuth()" class="logout">Logout</button>
+    <div v-if="modalOpenedAuth" class="auth-modal">
+      <div class="auth-modal-background">
+        <div class="auth-modal-content">
+          <div class="log-pass">
+            <h1>Authorization</h1>
+            <input placeholder="Login" class="auth" type="text" />
+            <input placeholder="Password" class="auth" type="password" />
+            <div class="reg-log">
+              <button class="registration-btn" @click="exitModalAuth()">
+                Registration
+              </button>
+              <div v-if="openModalReg()" class="registration-modal">
+                <div class="registration-modal-background">
+                  <div class="registration-modal-content">
+                    <div class="reg-name-id">
+                      <h1 style="padding-right: 20px">{{ name }}</h1>
+                      <h3>id {{ id }}</h3>
+                    </div>
+                    <div class="reg-block">
+                      <div class="reg-string-input">
+                        <div class="reg-string">
+                          <h2>Name</h2>
+                          <h2>Password</h2>
+                          <h2>E-mail</h2>
+                          <h2>Phone</h2>
+                        </div>
+                        <div class="reg-input">
+                          <input
+                            placeholder="Name"
+                            class="registration"
+                            type="text"
+                          />
+                          <input
+                            placeholder="Password"
+                            class="registration"
+                            type="password"
+                          />
+                          <input
+                            placeholder="E-mail"
+                            class="registration"
+                            type="text"
+                          />
+                          <input
+                            placeholder="Phone"
+                            class="registration"
+                            type="text"
+                          />
+                          <div class="can-del">
+                            <button class="cancel">Cancel</button>
+                            <button class="ok">OK</button>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <button class="login">Login</button>
               </div>
+              <button class="login">Login</button>
             </div>
           </div>
         </div>
       </div>
-      <Sidebar />
-    </nav>
-  </header>
+    </div>
+  </div>
 </template>
 
 <script>
-import Sidebar from "./Sidebar.vue";
-
 export default {
   props: {
     text: String,
@@ -116,37 +113,32 @@ export default {
     return {
       name: "Vitaly",
       id: "34834942",
-      modalOpenedName: false,
+      modalOpenedPersonal: false,
       modalOpenedAuth: false,
-      modalExit: false,
+      modalOpenedReg: false,
     };
   },
   methods: {
-    exitModal() {
-      this.modalExit = true;
+    exitModalPersonal() {
+      this.modalOpenedPersonal = false;
     },
-    openModalName() {
-      this.modalOpenedName = true;
+    exitModalAuth() {
+      this.modalOpenedAuth = false;
+    },
+    openModalReg() {
+      this.modalOpenedReg = true;
+    },
+    openModalPersonal() {
+      this.modalOpenedPersonal = true;
     },
     openModalAuth() {
       this.modalOpenedAuth = true;
     },
   },
-  components: {
-    Sidebar,
-  },
 };
 </script>
 
 <style lang="scss">
-.name {
-  background: none;
-  border: 0px solid;
-}
-a {
-  color: white;
-  text-decoration: underline;
-}
 .reg-log {
   display: flex;
   align-items: center;
@@ -166,8 +158,6 @@ a {
   font-weight: 400;
   font-size: 24px;
   line-height: 28px;
-
-  color: rgba(0, 0, 0, 0.9);
 
   cursor: pointer;
 }
@@ -242,7 +232,6 @@ a {
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
-  color: rgba(0, 0, 0, 0.9);
 
   background: #fca311;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -251,6 +240,9 @@ a {
   cursor: pointer;
 }
 .name {
+  background: none;
+  border: 0px solid;
+
   font-weight: 600;
   font-size: 24px;
   line-height: 28px;
@@ -332,10 +324,6 @@ a {
   display: flex;
   flex-direction: column;
 }
-.name {
-  background: none;
-  border: 0px solid;
-}
 .ok {
   width: 160px;
   height: 40px;
@@ -346,8 +334,6 @@ a {
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
-
-  color: rgba(0, 0, 0, 0.9);
 
   cursor: pointer;
 }
@@ -361,8 +347,6 @@ a {
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
-
-  color: rgba(0, 0, 0, 0.9);
 
   cursor: pointer;
 }
@@ -379,8 +363,6 @@ a {
   font-weight: 400;
   font-size: 24px;
   line-height: 28px;
-
-  color: #000000;
 
   opacity: 0.8;
 }
@@ -484,10 +466,6 @@ a {
   display: flex;
   flex-direction: column;
 }
-.name {
-  background: none;
-  border: 0px solid;
-}
 .delete {
   width: 160px;
   height: 40px;
@@ -498,8 +476,6 @@ a {
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
-
-  color: rgba(0, 0, 0, 0.9);
 
   cursor: pointer;
 }
@@ -513,8 +489,6 @@ a {
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
-
-  color: rgba(0, 0, 0, 0.9);
 
   cursor: pointer;
 }

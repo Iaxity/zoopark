@@ -1,5 +1,6 @@
 <template>
   <Header />
+  <Sidebar />
   <main>
     <router-view />
   </main>
@@ -7,10 +8,12 @@
 
 <script>
 import Header from "../components/Header.vue";
+import Sidebar from "../components/Sidebar.vue";
 
 export default {
   components: {
     Header,
+    Sidebar,
   },
 };
 </script>

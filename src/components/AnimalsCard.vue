@@ -1,44 +1,44 @@
 <template>
   <div class="animalscard">
-    <div class="btn-table">
-      <div class="btn__animals">
-        <h1>Animals card</h1>
-        <button @click="openModalAddCard()" class="btn-add">Add</button>
-        <div v-if="modalOpenedAddCard" class="add-animal-card-modal">
-          <div class="add-animal-card-modal-background">
-            <div class="add-animal-card-modal-content">
-              <div class="add-animal-card-name-id">
-                <h1>Add animal card</h1>
-              </div>
-              <div class="add-animal-card-block">
-                <div class="add-animal-card-string-input">
-                  <div class="add-animal-card-string">
-                    <h2>Animal type</h2>
-                    <h2>Animal birthday</h2>
-                    <h2>Aviary number</h2>
-                    <h2>Moniker</h2>
-                    <h2>Animal food</h2>
-                    <h2>Description</h2>
-                  </div>
-                  <div class="add-animal-card-input">
-                    <input class="add-animal-card" type="text" />
-                    <input class="add-animal-card" type="text" />
-                    <input class="add-animal-card" type="text" />
-                    <input class="add-animal-card" type="text" />
-                    <input class="add-animal-card" type="text" />
-                    <input class="add-animal-card" type="text" />
-                  </div>
-                  <div class="upload">
-                    <h2>Upload a photo</h2>
-                    <div class="over">
-                      <div class="over--photo">
-                        <button class="overview">Overview</button>
-                        <div class="show_photo"></div>
-                      </div>
-                      <div class="can--appl">
-                        <button class="cancel-btn">Cancel</button>
-                        <button class="apply">Apply</button>
-                      </div>
+    <div class="btn__animals">
+      <h1>Animals card</h1>
+      <button @click="openModalAddCard()" class="btn-add">Add</button>
+      <div v-if="modalOpenedAddCard" class="add-animal-card-modal">
+        <div class="add-animal-card-modal-background">
+          <div class="add-animal-card-modal-content">
+            <div class="add-animal-card-name-id">
+              <h1>Add animal card</h1>
+            </div>
+            <div class="add-animal-card-block">
+              <div class="add-animal-card-string-input">
+                <div class="add-animal-card-string">
+                  <h2>Animal type</h2>
+                  <h2>Animal birthday</h2>
+                  <h2>Aviary number</h2>
+                  <h2>Moniker</h2>
+                  <h2>Animal food</h2>
+                  <h2>Description</h2>
+                </div>
+                <div class="add-animal-card-input">
+                  <input class="add-animal-card" type="text" />
+                  <input class="add-animal-card" type="text" />
+                  <input class="add-animal-card" type="text" />
+                  <input class="add-animal-card" type="text" />
+                  <input class="add-animal-card" type="text" />
+                  <input class="add-animal-card" type="text" />
+                </div>
+                <div class="upload">
+                  <h2>Upload a photo</h2>
+                  <div class="over">
+                    <div class="over--photo">
+                      <button class="overview">Overview</button>
+                      <button class="show_photo"></button>
+                    </div>
+                    <div class="can--appl">
+                      <button @click="exitModalAddCard()" class="cancel-btn">
+                        Cancel
+                      </button>
+                      <button class="apply">Apply</button>
                     </div>
                   </div>
                 </div>
@@ -46,128 +46,110 @@
             </div>
           </div>
         </div>
-        <button class="btn-removed">Removed</button>
       </div>
-      <div class="filter">
-        <h2>Filter_1</h2>
-        <input
-          type="search"
-          class="search-field"
-          placeholder=""
-          value=""
-          name="s"
-        />
-        <h2>Filter_2</h2>
-        <input
-          type="search"
-          class="search-field"
-          placeholder=""
-          value=""
-          name="s"
-        />
-        <h2>Filter_3</h2>
-        <input
-          type="search"
-          class="search-field"
-          placeholder=""
-          value=""
-          name="s"
-        />
-      </div>
-      <div class="table">
-        <table>
-          <tr>
-            <th>Id</th>
-            <th>aviary number</th>
-            <th>animal</th>
-            <th>birthday</th>
-            <th>moniker</th>
-            <th>description</th>
-            <th>food</th>
-            <th>actions</th>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </table>
-      </div>
+      <button class="btn-removed">Removed</button>
+    </div>
+    <div class="filter">
+      <h2>Filter_1</h2>
+      <input type="search" class="search-field" />
+      <h2>Filter_2</h2>
+      <input type="search" class="search-field" />
+      <h2>Filter_3</h2>
+      <input type="search" class="search-field" />
+    </div>
+    <div class="table">
+      <table>
+        <tr>
+          <th>Id</th>
+          <th>aviary number</th>
+          <th>animal</th>
+          <th>birthday</th>
+          <th>moniker</th>
+          <th>description</th>
+          <th>food</th>
+          <th>actions</th>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
     </div>
   </div>
 </template>
@@ -177,12 +159,11 @@ export default {
   data() {
     return {
       modalOpenedAddCard: false,
-      modalExit: false,
     };
   },
   methods: {
-    exitModal() {
-      this.modalExit = true;
+    exitModalAddCard() {
+      this.modalOpenedAddCard = false;
     },
     openModalAddCard() {
       this.modalOpenedAddCard = true;
@@ -212,10 +193,6 @@ export default {
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
-}
-.btn-table {
-  display: flex;
-  flex-direction: column;
 }
 .btn__animals {
   display: flex;
@@ -259,6 +236,10 @@ export default {
     line-height: 28px;
   }
 }
+.over--photo {
+  display: flex;
+  padding-bottom: 20px;
+}
 .over--appl {
   padding-left: 45px;
 }
@@ -270,7 +251,7 @@ export default {
   height: 30px;
 
   margin-bottom: 20px;
-  margin-right: 20px;
+  margin-right: 25px;
 
   border: 1px solid #fca311;
   border-radius: 10px;
@@ -284,8 +265,13 @@ export default {
   color: #ffffff;
 }
 .show_photo {
-  background: url(../assets/preview_photo.jpg), #14213d;
+  background: #14213d url(../assets/preview_photo.jpg) no-repeat center / cover;
+
+  width: 151px;
+  height: 109px;
+
   border-radius: 10px;
+  border: 0px solid;
 }
 .add-animal-card-name-id {
   display: flex;
@@ -324,14 +310,14 @@ export default {
   width: 105px;
   height: 30px;
 
+  margin-right: 0px;
+
   background: #fca311;
   border-radius: 10px;
 
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
-
-  color: rgba(0, 0, 0, 0.9);
 }
 .cancel-btn {
   width: 105px;
@@ -345,11 +331,9 @@ export default {
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
-
-  color: rgba(0, 0, 0, 0.9);
 }
 .can--appl {
-  display: flex;
+  padding-left: 50px;
 }
 .add-animal-card {
   width: 262px;
@@ -436,7 +420,7 @@ export default {
 }
 .add-animal-card-modal-content {
   width: 583px;
-  height: 637px;
+  height: 685px;
 
   background-color: #14213d;
   border-radius: 10px;

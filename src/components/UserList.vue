@@ -125,10 +125,6 @@ export default {};
   line-height: 21px;
   cursor: pointer;
 }
-.filter {
-  align-items: center;
-  display: flex;
-}
 .search-field {
   width: 95px;
   height: 25px;
@@ -137,10 +133,7 @@ export default {};
 
   background: rgba(229, 229, 229, 0.6);
   border-radius: 5px;
-}
-.btn-table {
-  display: flex;
-  flex-direction: column;
+  margin-right: 10px;
 }
 .btn__animals {
   display: flex;
@@ -162,13 +155,6 @@ export default {};
     font-size: 18px;
     line-height: 21px;
   }
-}
-.search-field {
-  width: 95px;
-  height: 25px;
-  background: rgba(229, 229, 229, 0.6);
-  border-radius: 5px;
-  margin-right: 10px;
 }
 .userlist {
   font-weight: 400;

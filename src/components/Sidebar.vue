@@ -48,6 +48,11 @@ export default {
 .btn-1,
 .btn-2,
 .btn-3 {
+  // @media (max-width: 900px) {
+  //   width: 150px;
+
+  //   font-size: 16px;
+  // }
   width: 205px;
   height: 50px;
   background: #363363;
@@ -76,6 +81,9 @@ export default {
   height: 100%;
   width: 246px;
   position: fixed;
+  // @media (max-width: 900px) {
+  //   width: 200px;
+  // }
 }
 .nav-btns {
   display: flex;
@@ -84,7 +92,7 @@ export default {
 }
 .logo {
   font-weight: 500;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 42px;
 
   color: #fca311;
