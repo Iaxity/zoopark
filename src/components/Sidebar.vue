@@ -1,23 +1,23 @@
 <template>
   <div class="nav">
-    <div class="logo"><h1>ZooPark</h1></div>
-    <nav class="nav-btns">
+    <div class="nav__logo"><h1>ZooPark</h1></div>
+    <nav class="nav__btns">
       <button
-        class="btn-1"
+        class="nav__btn"
         @click="goToAnimalsCardView"
         style="margin-bottom: 20px"
       >
         Animals card
       </button>
       <button
-        class="btn-2"
+        class="nav__btn"
         @click="goToAnimalsView"
         style="margin-bottom: 20px"
       >
         Animals
       </button>
       <button
-        class="btn-3"
+        class="nav__btn"
         @click="goToUserListView"
         style="margin-bottom: 20px"
       >
@@ -45,9 +45,7 @@ export default {
 </script>
 
 <style lang="scss">
-.btn-1,
-.btn-2,
-.btn-3 {
+.nav__btn {
   // @media (max-width: 900px) {
   //   width: 150px;
 
@@ -85,12 +83,12 @@ export default {
   //   width: 200px;
   // }
 }
-.nav-btns {
+.nav__btns {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-.logo {
+.nav__logo {
   font-weight: 500;
   font-size: 18px;
   line-height: 42px;

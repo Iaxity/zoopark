@@ -1,34 +1,16 @@
 <template>
   <div class="userlist">
-    <div class="btn__animals">
+    <div class="userlist__btn">
       <h1>UserList</h1>
-      <button class="btn-removed">Removed</button>
+      <button class="userlist__btn_remove">Removed</button>
     </div>
-    <div class="filter">
+    <div class="userlist__filter">
       <h2>Filter_1</h2>
-      <input
-        type="search"
-        class="search-field"
-        placeholder=""
-        value=""
-        name="s"
-      />
+      <input type="search" class="userlist__search" />
       <h2>Filter_2</h2>
-      <input
-        type="search"
-        class="search-field"
-        placeholder=""
-        value=""
-        name="s"
-      />
+      <input type="search" class="userlist__search" />
       <h2>Filter_3</h2>
-      <input
-        type="search"
-        class="search-field"
-        placeholder=""
-        value=""
-        name="s"
-      />
+      <input type="search" class="userlist__search" />
     </div>
     <div class="table">
       <table>
@@ -40,70 +22,14 @@
           <th>password</th>
           <th>actions</th>
         </tr>
-        <tr>
+        <!-- <tr v-for="(user, index) in users">
+          <td>user.name</td>
           <td></td>
           <td></td>
           <td></td>
           <td></td>
           <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+        </tr> -->
       </table>
     </div>
   </div>
@@ -114,7 +40,7 @@ export default {};
 </script>
 
 <style lang="scss">
-.btn-removed {
+.userlist__btn_remove {
   background: #fca311;
   border-radius: 10px;
   width: 110px;
@@ -125,7 +51,7 @@ export default {};
   line-height: 21px;
   cursor: pointer;
 }
-.search-field {
+.userlist__search {
   width: 95px;
   height: 25px;
   left: 332px;
@@ -135,7 +61,7 @@ export default {};
   border-radius: 5px;
   margin-right: 10px;
 }
-.btn__animals {
+.userlist__btn {
   display: flex;
   align-items: center;
   padding-bottom: 25px;
@@ -143,7 +69,7 @@ export default {};
     margin-right: 20px;
   }
 }
-.filter {
+.userlist__filter {
   align-items: center;
   display: flex;
   padding-bottom: 15px;
