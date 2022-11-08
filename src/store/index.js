@@ -7,7 +7,7 @@ export default createStore({
   },
   actions: {
     GET_USERS_FROM_API({ commit }) {
-      return axios("https://72f2-188-162-201-39.eu.ngrok.io/user/read", {
+      return axios("https://abc4-188-162-48-72.eu.ngrok.io/user/read", {
         method: "GET",
       }).then((response) => {
         commit("SET_USERS_TO_VUEX", response.data);

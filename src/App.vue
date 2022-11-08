@@ -4,21 +4,7 @@
   </div>
 </template>
 
-<script>
-import { mapActions, mapGetters } from "vuex";
-
-export default {
-  computed: {
-    ...mapGetters(["USERS"]),
-  },
-  methods: {
-    ...mapActions(["GET_USERS_FROM_API"]),
-  },
-  mounted() {
-    this.GET_USERS_FROM_API();
-  },
-};
-</script>
+<script></script>
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");

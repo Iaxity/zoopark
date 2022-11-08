@@ -1,11 +1,17 @@
 <template>
-  <div class="authotization">
+  <div v-if="!user" class="authotization">
     <div class="authotization_background">
       <div class="authotization_content">
         <div class="authorization_login_password">
           <h1>Authorization</h1>
-          <input placeholder="Login" class="authorization_input" type="text" />
           <input
+            v-model="email"
+            placeholder="Login"
+            class="authorization_input"
+            type="text"
+          />
+          <input
+            v-model="password"
             placeholder="Password"
             class="authorization_input"
             type="password"
@@ -14,9 +20,7 @@
             <button @click="goToRegistration" class="registration_reg_btn">
               Registration
             </button>
-            <button @click="goToAnimalsCardView" class="authorization_log_btn">
-              Login
-            </button>
+            <button @click="login" class="authorization_log_btn">Login</button>
           </div>
         </div>
       </div>
@@ -24,16 +28,30 @@
   </div>
 </template>
 
-<script>
-export default {
-  methods: {
-    goToAnimalsCardView() {
-      this.$router.push({ name: "AnimalsCard" });
-    },
-    goToRegistration() {
-      this.$router.push({ name: "Registration" });
-    },
-  },
+<script setup>
+import router from "@/router";
+// import { getUsers } from "@/services/user-service";
+import { ref } from "vue";
+
+const email = ref("");
+const password = ref("");
+
+const login = () => {
+  const usersList = [
+    { name: "Sasha", email: "1", password: "1" },
+    { name: "Dima", email: "2", password: "2" },
+  ];
+  for (const user of usersList) {
+    if (user.email === email.value && user.password === password.value) {
+      localStorage.setItem("name", user.name);
+      router.push({ name: "AnimalsCard" });
+      return;
+    }
+  }
+  alert("Неверные данные");
+};
+const goToRegistration = () => {
+  router.push({ name: "Registration" });
 };
 </script>
 

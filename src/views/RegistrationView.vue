@@ -14,18 +14,30 @@
               <h2>Phone</h2>
             </div>
             <div class="registration-input">
-              <input placeholder="Name" class="registration-inp" type="text" />
               <input
+                v-model="user.name"
+                placeholder="Name"
+                class="registration-inp"
+                type="text"
+              />
+              <input
+                v-model="user.password"
                 placeholder="Password"
                 class="registration-inp"
                 type="password"
               />
               <input
+                v-model="user.email"
                 placeholder="E-mail"
                 class="registration-inp"
                 type="text"
               />
-              <input placeholder="Phone" class="registration-inp" type="text" />
+              <input
+                v-model="user.phone"
+                placeholder="Phone"
+                class="registration-inp"
+                type="text"
+              />
               <div class="can-del">
                 <button
                   @click="goToAuthorization"
@@ -33,10 +45,7 @@
                 >
                   Cancel
                 </button>
-                <button
-                  @click="goToAnimalsCardView"
-                  class="registration-delete_btn"
-                >
+                <button @click="registrateUser" class="registration-delete_btn">
                   OK
                 </button>
               </div>
@@ -48,16 +57,34 @@
   </div>
 </template>
 
-<script>
-export default {
-  methods: {
-    goToAnimalsCardView() {
-      this.$router.push({ name: "AnimalsCard" });
-    },
-    goToAuthorization() {
-      this.$router.push({ name: "Authorization" });
-    },
-  },
+<script setup>
+import router from "@/router";
+// import { createUser } from "@/services/user-service";
+import { reactive } from "vue";
+
+const user = reactive({
+  name: "",
+  email: "",
+  phone: "",
+  password: "",
+});
+
+const registrateUser = async () => {
+  if (
+    user.name === "" ||
+    user.email === "" ||
+    user.phone === "" ||
+    user.password === ""
+  ) {
+    alert("Заполнены не все поля");
+    return;
+  }
+  // await createUser(user.name, user.email, user.phone, user.password);
+
+  router.push({ name: "Authorization" });
+};
+const goToAuthorization = () => {
+  router.push({ name: "Authorization" });
 };
 </script>
 

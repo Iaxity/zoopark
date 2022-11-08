@@ -5,7 +5,7 @@
         @click="shownPersonalArea = true"
         class="modal__personalarea-name"
       >
-        Vitaly
+        {{ name }}
       </button>
       <button @click="goToAuthorization" class="authorization_logout">
         Logout
@@ -20,9 +20,12 @@ import { ref } from "vue";
 import PersonalArea from "@/components/PersonalArea.vue";
 import router from "@/router";
 
+const name = ref(localStorage.getItem("name"));
+
 const shownPersonalArea = ref(false);
 const goToAuthorization = () => {
-  router.push = { name: "Authorization" };
+  localStorage.removeItem("name");
+  router.push({ name: "Authorization" });
 };
 </script>
 
