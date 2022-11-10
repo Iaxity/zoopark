@@ -12,7 +12,7 @@
       </button>
     </div>
   </div>
-  <PersonalArea v-show="shownPersonalArea" />
+  <PersonalArea v-show="shownPersonalArea" @close="shownPersonalArea = false" />
 </template>
 
 <script setup>

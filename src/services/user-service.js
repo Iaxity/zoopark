@@ -1,8 +1,8 @@
 import { api } from "@/api/axios.js";
 
-async function getUsers() {
-  const response = await api.post("user/read", {});
-  return response.data;
+async function auth(email, password) {
+  const response = await api.post("user/auth", { email, password });
+  return response;
 }
 
 async function createUser(name, email, phone, password) {
@@ -14,4 +14,4 @@ async function createUser(name, email, phone, password) {
   });
   return response.data;
 }
-export { getUsers, createUser };
+export { auth, createUser };

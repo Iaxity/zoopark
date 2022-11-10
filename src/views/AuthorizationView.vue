@@ -30,25 +30,23 @@
 
 <script setup>
 import router from "@/router";
-// import { getUsers } from "@/services/user-service";
+import { auth } from "@/services/user-service";
 import { ref } from "vue";
 
 const email = ref("");
 const password = ref("");
 
-const login = () => {
-  const usersList = [
-    { name: "Sasha", email: "1", password: "1" },
-    { name: "Dima", email: "2", password: "2" },
-  ];
-  for (const user of usersList) {
-    if (user.email === email.value && user.password === password.value) {
-      localStorage.setItem("name", user.name);
-      router.push({ name: "AnimalsCard" });
-      return;
-    }
-  }
-  alert("Неверные данные");
+const login = async () => {
+  await auth(email, password);
+  // for (const user of usersList) {
+  //   if (user.email === email.value && user.password === password.value) {
+  //     localStorage.setItem("name", user.name);
+  //     router.push({ name: "AnimalsCard" });
+  //     return;
+  //   }
+  // }
+  // alert("Неверные данные");
+  router.push({ name: "AnimalsCard" });
 };
 const goToRegistration = () => {
   router.push({ name: "Registration" });
