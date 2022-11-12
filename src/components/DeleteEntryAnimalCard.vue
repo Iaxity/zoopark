@@ -1,5 +1,5 @@
 <template>
-  <div v-show="shownDeleteAnimal" class="modal__deleteanimalcard">
+  <div v-show="isDeleteAnimalShown" class="modal__deleteanimalcard">
     <div class="modal__deleteanimalcard-background">
       <div class="modal__deleteanimalcard-content">
         <div class="modal__deleteanimalcard-item">
@@ -29,7 +29,7 @@
 </template>
 
 <script setup>
-import { defineEmits } from "vue";
+import { defineEmits, ref } from "vue";
 const emit = defineEmits(["close"]);
 const closeModal = () => {
   emit("close");
@@ -37,6 +37,7 @@ const closeModal = () => {
 const deleteAnimal = () => {
   closeModal();
 };
+const isDeleteAnimalShown = ref(false);
 </script>
 
 <style lang="scss">

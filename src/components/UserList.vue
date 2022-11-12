@@ -14,29 +14,40 @@
     </div>
     <div class="table">
       <table>
-        <tr>
-          <th>Id</th>
-          <th>name</th>
-          <th>email</th>
-          <th>phone</th>
-          <th>password</th>
-          <th>actions</th>
-        </tr>
-        <!-- <tr v-for="(user, index) in users">
-          <td>user.name</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr> -->
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>name</th>
+            <th>email</th>
+            <th>phone</th>
+            <th>password</th>
+            <th>actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="user in usersList" :key="user.id">
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phone }}</td>
+            <td>{{ user.password }}</td>
+            <td></td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </div>
 </template>
 
-<script>
-export default {};
+<script setup>
+import { ref, onMounted } from "vue";
+import { getUserlist } from "@/services/userlist-sevice";
+// const users = ref(null);
+const usersList = ref(null);
+onMounted(async () => {
+  const response = await getUserlist(0, 8);
+  usersList.value = response;
+});
 </script>
 
 <style lang="scss">

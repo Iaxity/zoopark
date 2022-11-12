@@ -1,5 +1,5 @@
 <template>
-  <div v-show="shownAddAnimal" class="modal__addanimalcard">
+  <div v-show="isAddAnimalShown" class="modal__addanimalcard">
     <div class="modal__addanimalcard-background">
       <div class="modal__addanimalcard-content">
         <div class="modal__addanimalcard-item">
@@ -108,6 +108,7 @@ const animal = reactive({
   Animalfood: "",
   Description: "",
 });
+const isAddAnimalShown = ref(false);
 </script>
 
 <style lang="scss">

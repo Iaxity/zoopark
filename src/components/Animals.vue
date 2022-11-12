@@ -19,18 +19,18 @@
           <td></td>
           <td></td>
           <td>
-            <button @click="shownEditAnimal = true" class="edit" />
-            <button @click="shownDeleteAnimal = true" class="delete-btn" />
+            <button @click="isEditAnimalShown = true" class="edit" />
+            <button @click="isDeleteAnimalShown = true" class="delete-btn" />
           </td>
         </tr>
       </table>
     </div>
   </div>
   <DeleteEntryAnimal
-    v-show="shownDeleteAnimal"
-    @close="shownDeleteAnimal = false"
+    v-show="isDeleteAnimalShown"
+    @close="isDeleteAnimalShown = false"
   />
-  <EditAnimal v-show="shownEditAnimal" @close="shownEditAnimal = false" />
+  <EditAnimal v-show="isEditAnimalShown" @close="isEditAnimalShown = false" />
 </template>
 
 <script setup>
@@ -38,8 +38,8 @@ import { ref } from "vue";
 import DeleteEntryAnimal from "./DeleteEntryAnimal.vue";
 import EditAnimal from "@/components/EditAnimal.vue";
 
-const shownEditAnimal = ref(false);
-const shownDeleteAnimal = ref(false);
+const isEditAnimalShown = ref(false);
+const isDeleteAnimalShown = ref(false);
 </script>
 
 <style lang="scss">

@@ -59,7 +59,7 @@
 
 <script setup>
 import router from "@/router";
-import { createUser } from "@/services/user-service";
+import { createUser } from "@/services/reg-service";
 import { reactive } from "vue";
 
 const user = reactive({
@@ -79,8 +79,13 @@ const registrateUser = async () => {
     alert("Заполнены не все поля");
     return;
   }
-  await createUser(user.name, user.email, user.phone, user.password);
-
+  const response = await createUser(
+    user.name,
+    user.email,
+    user.phone,
+    user.password
+  );
+  localStorage.setItem("name", response.user);
   router.push({ name: "AnimalsCard" });
 };
 const goToAuthorization = () => {

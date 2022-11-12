@@ -1,5 +1,5 @@
 <template>
-  <div v-show="shownDeleteProfile" class="modal__deleteprofile">
+  <div v-show="isDeleteProfileShown" class="modal__deleteprofile">
     <div class="modal__deleteprofile-background">
       <div class="modal__deleteprofile-content">
         <div class="modal__deleteprofile-item">
@@ -26,7 +26,7 @@
 </template>
 
 <script setup>
-import { defineEmits } from "vue";
+import { defineEmits, ref } from "vue";
 const emit = defineEmits(["close"]);
 const closeModal = () => {
   emit("close");
@@ -34,6 +34,7 @@ const closeModal = () => {
 const deleteProfile = () => {
   closeModal();
 };
+const isDeleteProfileShown = ref(false);
 </script>
 
 <style lang="scss">

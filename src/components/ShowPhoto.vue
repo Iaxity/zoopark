@@ -1,5 +1,5 @@
 <template>
-  <div v-show="shownShowPhoto" class="modal__showphoto">
+  <div v-show="isShowPhotoShown" class="modal__showphoto">
     <div class="modal__showphoto-background">
       <div class="modal__showphoto-content"></div>
     </div>
@@ -7,12 +7,13 @@
 </template>
 
 <script setup>
-// import { defineEmits } from "vue";
+import { ref } from "vue";
 
 // const emit = defineEmits(["close"]);
 // const closeModal = () => {
 //   emit("close");
 // };
+const isShowPhotoShown = ref(false);
 </script>
 
 <style lang="scss">

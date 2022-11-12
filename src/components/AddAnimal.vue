@@ -1,5 +1,5 @@
 <template>
-  <div v-show="shownAddAnimal" class="modal__addanimal">
+  <div v-show="isAddAnimalShown" class="modal__addanimal">
     <div class="modal__addanimal-background">
       <div class="modal__addanimal-content">
         <div class="modal__addanimal-item">
@@ -42,7 +42,7 @@
 </template>
 
 <script setup>
-import { defineEmits, reactive } from "vue";
+import { defineEmits, reactive, ref } from "vue";
 const emit = defineEmits(["close"]);
 const closeModal = () => {
   animal.Animaltype = "";
@@ -56,6 +56,7 @@ const animal = reactive({
   Animaltype: "",
   Description: "",
 });
+const isAddAnimalShown = ref(false);
 </script>
 
 <style lang="scss">

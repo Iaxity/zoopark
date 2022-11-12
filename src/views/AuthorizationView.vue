@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!user" class="authotization">
+  <div class="authotization">
     <div class="authotization_background">
       <div class="authotization_content">
         <div class="authorization_login_password">
@@ -30,22 +30,15 @@
 
 <script setup>
 import router from "@/router";
-import { auth } from "@/services/user-service";
+import { auth } from "@/services/auth-service";
 import { ref } from "vue";
 
 const email = ref("");
 const password = ref("");
 
 const login = async () => {
-  await auth(email, password);
-  // for (const user of usersList) {
-  //   if (user.email === email.value && user.password === password.value) {
-  //     localStorage.setItem("name", user.name);
-  //     router.push({ name: "AnimalsCard" });
-  //     return;
-  //   }
-  // }
-  // alert("Неверные данные");
+  const response = await auth(email, password);
+  localStorage.setItem("name", response.user);
   router.push({ name: "AnimalsCard" });
 };
 const goToRegistration = () => {

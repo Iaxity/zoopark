@@ -1,5 +1,5 @@
 <template>
-  <div v-show="shownPersonalArea" class="modal__personalarea">
+  <div v-show="isPersonalAreaShown" class="modal__personalarea">
     <div class="modal__personalarea-background">
       <div class="modal__personalarea-content">
         <div class="modal__personalarea-name_id">
@@ -42,7 +42,6 @@
                 >
                   Cancel
                 </button>
-                <!-- Modal DeleteProfile -->
                 <button
                   @click="shownDeleteProfile = true"
                   class="modal__personalarea-delete_btn"
@@ -70,6 +69,9 @@ const closeModal = () => {
   emit("close");
 };
 const shownDeleteProfile = ref(false);
+const name = ref("");
+const id = ref("");
+const isPersonalAreaShown = ref(false);
 </script>
 
 <style lang="scss">

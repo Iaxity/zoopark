@@ -1,5 +1,5 @@
 <template>
-  <div v-show="shownEditAnimal" class="modal__addanimal">
+  <div v-show="isEditAnimalShown" class="modal__addanimal">
     <div class="modal__addanimal-background">
       <div class="modal__addanimal-content">
         <div class="modal__addanimal-item">
@@ -12,13 +12,21 @@
               <h2>Animal description</h2>
             </div>
             <div class="modal__addanimal-input">
-              <input class="modal__addanimal-inp" type="text" />
-              <input class="modal__addanimal-inp" type="text" />
+              <input
+                v-model="animal.Animaltype"
+                class="modal__addanimal-inp"
+                type="text"
+              />
+              <input
+                v-model="animal.Description"
+                class="modal__addanimal-inp"
+                type="text"
+              />
               <div class="modal__cancel_apply_btn">
-                <button @click="close" class="modal__addanimal-cancel_btn">
+                <button @click="closeModal" class="modal__addanimal-cancel_btn">
                   Cancel
                 </button>
-                <button @click="close" class="modal__addanimal-apply_btn">
+                <button @click="editAnimal" class="modal__addanimal-apply_btn">
                   Apply
                 </button>
               </div>
@@ -30,17 +38,26 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: ["modalAddAnimalActive"],
-  setup(props, { emit }) {
-    const close = () => {
-      emit("close");
-    };
-
-    return { close };
-  },
+<script setup>
+import { ref, defineEmits, reactive } from "vue";
+const emit = defineEmits(["close"]);
+const closeModal = () => {
+  animal.Animaltype = "";
+  animal.Description = "";
+  emit("close");
 };
+const editAnimal = () => {
+  closeModal();
+};
+const animal = reactive({
+  Animaltype: "",
+  Animalbirthday: "",
+  Aviarynumber: "",
+  Moniker: "",
+  Animalfood: "",
+  Description: "",
+});
+const isEditAnimalShown = ref(false);
 </script>
 
 <style lang="scss">
